@@ -5,13 +5,10 @@ const bot= new Telegraf("6652023320:AAFb_N4BEWN5rWGf_7DlOm6m7tZI6NopVgU");
 // const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
-    ctx.reply('Welcome! Please read and agree to the terms and conditions below:', Markup.inlineKeyboard([
-        Markup.callbackButton('I Agree', 'agree'),
-    ]).extra());
+    ctx.reply('Welcome! Please agree to the terms and conditions by typing /agree');
 });
 
 bot.command('agree', (ctx) => {
-    ctx.reply('Thank you for agreeing to the terms and conditions.');
     askForContact(ctx);
 });
 
